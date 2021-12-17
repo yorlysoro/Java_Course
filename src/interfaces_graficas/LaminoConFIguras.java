@@ -1,7 +1,9 @@
 package interfaces_graficas;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.SystemColor;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
@@ -17,20 +19,25 @@ public class LaminoConFIguras extends JPanel {
 		g.drawArc(50, 100, 100, 200, 120, 150);*/
 		Graphics2D g2 = (Graphics2D) g;
 		Rectangle2D rectangulo = new Rectangle2D.Double(100,100,200,150);
-		g2.draw(rectangulo);
+		g2.setPaint(Color.RED);
+		g2.fill(rectangulo);
 		
 		Ellipse2D elipse = new Ellipse2D.Double();
 		elipse.setFrame(rectangulo);
-		g2.draw(elipse);
+		Color miColor = new Color(71,13,71).brighter().brighter();
+		g2.setPaint(miColor);
+		g2.fill(elipse);
+		this.setBackground(SystemColor.window);
 		
-		g2.draw(new Line2D.Double(100,100,300,250));
+//		g2.draw(new Line2D.Double(100,100,300,250));
+//		
+//		double CentroenX = rectangulo.getCenterX();
+//		double CentroenY = rectangulo.getCenterY();
+//		
+//		double radio = 150;
+//		Ellipse2D circulo = new Ellipse2D.Double();
+//		circulo.setFrameFromCenter(CentroenX, CentroenY, CentroenX+radio, CentroenY+radio);
+//		g2.draw(circulo);
 		
-		double CentroenX = rectangulo.getCenterX();
-		double CentroenY = rectangulo.getCenterY();
-		
-		double radio = 150;
-		Ellipse2D circulo = new Ellipse2D.Double();
-		circulo.setFrameFromCenter(CentroenX, CentroenY, CentroenX+radio, CentroenY+radio);
-		g2.draw(circulo);
 	}
 }

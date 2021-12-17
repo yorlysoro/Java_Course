@@ -1,4 +1,4 @@
-package interfaces_graficas;
+package Fonts;
 
 import java.awt.Color;
 
@@ -8,7 +8,7 @@ public class MarcoConDibujos extends JFrame {
 	public MarcoConDibujos() {
 		this.setTitle("Marco con Dibujos");
 		this.setSize(400,400);
-		LaminoConFIguras lamina = new LaminoConFIguras();
+		LaminaFonts lamina = new LaminaFonts();
 		this.add(lamina);
 		this.setBackground(Color.PINK);
 	}
